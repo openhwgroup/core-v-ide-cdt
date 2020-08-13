@@ -2,8 +2,8 @@
 
 ## OpenHW Group Core-V IDE based on Eclipse CDT
 
-[![Eclipse License](https://img.shields.io/badge/license-EPL--2.0-brightgreen.svg)](https://github.com/openwhgroup/core-v-ide-cdt/blob/master/LICENSE)
-[![Build Status](https://github.com/openwhgroup/core-v-ide-cdt/workflows/CI/badge.svg)](https://github.com/openwhgroup/core-v-ide-cdt/actions)
+[![Eclipse License](https://img.shields.io/badge/license-EPL--2.0-brightgreen.svg)](https://github.com/openhwgroup/core-v-ide-cdt/blob/master/LICENSE)
+[![Build Status](https://github.com/openhwgroup/core-v-ide-cdt/workflows/CI/badge.svg)](https://github.com/openhwgroup/core-v-ide-cdt/actions)
 
 ### License
 
