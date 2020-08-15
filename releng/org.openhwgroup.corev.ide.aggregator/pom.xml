@@ -23,6 +23,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>..\..\features\org.openhwgroup.corev.ide.feature</module>
 	</modules>
 
 </project>
