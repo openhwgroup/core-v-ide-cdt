@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="OpenHW IDE">
+         <property
+               name="aboutImage"
+               value="ohw_lg.png">
+         </property>
+         <property
+               name="aboutText"
+               value="%productBlurb">
+         </property>
+         <property
+               name="windowImages"
+               value="ohw32.png, ohw48.png, ohw64.png">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
