@@ -24,8 +24,12 @@
 
 	<modules>
 		<module>..\..\releng\org.openhwgroup.corev.ide.target</module>
+
 		<module>..\..\features\org.openhwgroup.corev.ide.cdt.feature</module>
+
+		<module>..\..\bundles\org.openhwgroup.corev.ide</module>
 		<module>..\..\features\org.openhwgroup.corev.ide.feature</module>
+
 		<module>..\..\releng\org.openhwgroup.corev.ide.repository</module>
 	</modules>
 
