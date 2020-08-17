@@ -31,6 +31,8 @@
 		<module>..\..\features\org.openhwgroup.corev.ide.feature</module>
 
 		<module>..\..\releng\org.openhwgroup.corev.ide.repository</module>
+
+		<module>..\..\products\org.openhwgroup.corev.ide.product</module>
 	</modules>
 
 </project>

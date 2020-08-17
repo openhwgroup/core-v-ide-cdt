@@ -35,4 +35,11 @@
       <import feature="org.openhwgroup.corev.ide.cdt.feature" version="0.1.0.qualifier"/>
    </requires>
 
+   <plugin
+         id="org.openhwgroup.corev.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

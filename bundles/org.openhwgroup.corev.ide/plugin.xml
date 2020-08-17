@@ -9,7 +9,7 @@
             name="OpenHW IDE">
          <property
                name="aboutImage"
-               value="ohw_lg.png">
+               value="images\ohw_lg.png">
          </property>
          <property
                name="aboutText"
@@ -17,7 +17,7 @@
          </property>
          <property
                name="windowImages"
-               value="ohw32.png, ohw48.png, ohw64.png">
+               value="images\ohw16.png, images\ohw32.png, images\ohw48.png, images\ohw64.png">
          </property>
       </product>
    </extension>
