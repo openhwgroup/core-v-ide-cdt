@@ -17,15 +17,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.openhwgroup.corev.ide</groupId>
-	<artifactId>org.openhwgroup.corev.ide.aggregator</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<artifactId>org.openhwgroup.corev.ide.target</artifactId>
+	<packaging>eclipse-target-definition</packaging>
 
-	<modules>
-		<module>..\..\releng\org.openhwgroup.corev.ide.target</module>
-		<module>..\..\features\org.openhwgroup.corev.ide.feature</module>
-		<module>..\..\releng\org.openhwgroup.corev.ide.repository</module>
-	</modules>
+	<parent>
+		<groupId>org.openhwgroup.corev.ide</groupId>
+		<artifactId>org.openhwgroup.corev.ide.parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../../releng/org.openhwgroup.corev.ide.parent</relativePath>
+	</parent>
 
 </project>
