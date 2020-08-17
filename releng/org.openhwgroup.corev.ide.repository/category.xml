@@ -13,6 +13,10 @@
 -->
 <site>
 	<feature
+		id="org.openhwgroup.corev.ide.cdt.feature">
+		<category name="org.openhwgroup.corev.ide.category" />
+	</feature>
+	<feature
 		id="org.openhwgroup.corev.ide.feature">
 		<category name="org.openhwgroup.corev.ide.category" />
 	</feature>
