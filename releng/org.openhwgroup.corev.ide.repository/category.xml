@@ -22,9 +22,9 @@
 	</feature>
 	<category-def
 		name="org.openhwgroup.corev.ide.category"
-		label="OpenHW Group Core-V IDE">
+		label="OpenHW Group CORE-V IDE">
 		<description>
-			OpenHW Group Core-V IDE based on Eclipse CDT
+			OpenHW Group CORE-V IDE based on Eclipse CDT
 		</description>
 	</category-def>
 </site>
