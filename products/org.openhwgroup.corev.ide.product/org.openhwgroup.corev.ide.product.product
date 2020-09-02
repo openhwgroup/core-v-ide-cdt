@@ -46,10 +46,7 @@
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.cdt"/>
       <feature id="ilg.gnumcueclipse.codered.feature"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.jlink.feature"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.jumper.feature"/>
       <feature id="ilg.gnumcueclipse.debug.gdbjtag.openocd.feature"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature"/>
       <feature id="ilg.gnumcueclipse.debug.gdbjtag.qemu.feature"/>
       <feature id="ilg.gnumcueclipse.doc.user.feature"/>
       <feature id="ilg.gnumcueclipse.managedbuild.cross.arm.feature"/>
