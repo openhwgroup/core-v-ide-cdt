@@ -11,8 +11,7 @@
 
 	Contributors:
 		Alexander Fedorov (ArSysOp) - initial API and implementation
--->
-<target name="org.openhwgroup.corev.ide.target" sequenceNumber="1">
+--><target name="org.openhwgroup.corev.ide.target" sequenceNumber="1">
 	<locations>
 		<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 			<unit id="org.eclipse.license.feature.group" version="0.0.0"/>
@@ -28,22 +27,37 @@
 			<repository location="https://download.eclipse.org/tools/cdt/builds/9.11/cdt-9.11.1-2020-06-rc1"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<unit id="ilg.gnumcueclipse.codered.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.debug.gdbjtag.jlink.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.debug.gdbjtag.jumper.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.debug.gdbjtag.openocd.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.debug.gdbjtag.qemu.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.doc.user.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.managedbuild.cross.arm.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.managedbuild.cross.riscv.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.templates.ad.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.templates.cortexm.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.templates.freescale.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.templates.sifive.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.templates.stm.feature.feature.group" version="0.0.0"/>
-			<unit id="ilg.gnumcueclipse.packs.feature.feature.group" version="0.0.0"/>
-			<repository location="https://download.eclipse.org/embed-cdt/releases/5.1.1/p2/"/>
+			<repository location="https://download.eclipse.org/embed-cdt/releases/5.1.3/p2/"/>
+			<unit id="ilg.gnumcueclipse.codered.feature.feature.group" version="1.1.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.codered.feature.source.feature.group" version="1.1.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.jlink.feature.feature.group" version="4.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.jlink.feature.source.feature.group" version="4.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.jumper.feature.feature.group" version="1.2.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.jumper.feature.source.feature.group" version="1.2.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.openocd.feature.feature.group" version="4.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.openocd.feature.source.feature.group" version="4.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature.feature.group" version="1.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature.source.feature.group" version="1.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.qemu.feature.feature.group" version="3.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.debug.gdbjtag.qemu.feature.source.feature.group" version="3.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.doc.user.feature.feature.group" version="1.1.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.doc.user.feature.source.feature.group" version="1.1.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.managedbuild.cross.arm.feature.feature.group" version="2.7.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.managedbuild.cross.arm.feature.source.feature.group" version="2.7.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.managedbuild.cross.riscv.feature.feature.group" version="2.9.3.202010011906"/>
+			<unit id="ilg.gnumcueclipse.managedbuild.cross.riscv.feature.source.feature.group" version="2.9.3.202010011906"/>
+			<unit id="ilg.gnumcueclipse.packs.feature.feature.group" version="2.4.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.packs.feature.source.feature.group" version="2.4.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.ad.feature.feature.group" version="1.3.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.ad.feature.source.feature.group" version="1.3.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.cortexm.feature.feature.group" version="1.5.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.cortexm.feature.source.feature.group" version="1.5.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.freescale.feature.feature.group" version="2.3.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.freescale.feature.source.feature.group" version="2.3.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.sifive.feature.feature.group" version="1.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.sifive.feature.source.feature.group" version="1.4.1.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.stm.feature.feature.group" version="2.7.2.202010011906"/>
+			<unit id="ilg.gnumcueclipse.templates.stm.feature.source.feature.group" version="2.7.2.202010011906"/>
 		</location>
 	</locations>
 </target>
