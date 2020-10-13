@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="ilg.gnumcueclipse.managedbuild.cross.riscv.toolchains">
+      <toolchain
+            name="CORE-V-MCU GCC/Newlib"
+            prefix="riscv32-corev-elf-">
+      </toolchain>
+   </extension>
+
+</plugin>
