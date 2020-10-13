@@ -34,7 +34,7 @@
 		<module>..\..\releng\org.openhwgroup.corev.ide.repository</module>
 
 		<module>..\..\products\org.openhwgroup.corev.ide.product</module>
-		<module>..\..\features\org.openhwgroup.corev.toolchain</module>
+		<module>..\..\bundles\org.openhwgroup.corev.toolchain</module>
 	</modules>
 
 </project>
