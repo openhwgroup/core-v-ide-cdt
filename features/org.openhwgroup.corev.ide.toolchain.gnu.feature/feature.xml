@@ -16,6 +16,7 @@
       label="%featureName"
       version="0.1.0.qualifier"
       provider-name="%providerName"
+      plugin="org.openhwgroup.corev.ide.toolchain.gnu"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
 
