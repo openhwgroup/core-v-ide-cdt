@@ -25,6 +25,7 @@
 	<modules>
 		<module>..\..\releng\org.openhwgroup.corev.ide.target</module>
 
+		<module>..\..\bundles\org.openhwgroup.corev.ide.toolchain.gnu</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.debug.ui</module>
 		<module>..\..\features\org.openhwgroup.corev.ide.cdt.feature</module>
 
