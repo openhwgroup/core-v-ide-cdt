@@ -58,6 +58,7 @@
       <feature id="ilg.gnumcueclipse.packs.feature"/>
       <feature id="org.openhwgroup.corev.ide.cdt.feature"/>
       <feature id="org.openhwgroup.corev.ide.feature"/>
+      <feature id="org.openhwgroup.corev.ide.toolchain.gnu.feature"/>
    </features>
 
    <configurations>
