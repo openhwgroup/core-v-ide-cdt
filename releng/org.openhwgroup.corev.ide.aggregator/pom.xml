@@ -26,6 +26,7 @@
 		<module>..\..\releng\org.openhwgroup.corev.ide.target</module>
 
 		<module>..\..\bundles\org.openhwgroup.corev.ide.toolchain.gnu</module>
+		<module>..\..\bundles\org.openhwgroup.corev.ide.toolchain.gnu.core</module>
 		<module>..\..\features\org.openhwgroup.corev.ide.toolchain.gnu.feature</module>
 
 		<module>..\..\bundles\org.openhwgroup.corev.ide.debug.ui</module>
