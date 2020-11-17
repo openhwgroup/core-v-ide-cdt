@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.cdt.managedbuilder.ui.newWizardPages">
+      <wizardPage
+            ID="org.openhwgroup.corev.ide.toolchain.gnu.ui.wizardPage1"
+            pageClass="org.openhwgroup.corev.ide.toolchain.gnu.ui.WizardPage1">
+      </wizardPage>
+   </extension>
+
+</plugin>
