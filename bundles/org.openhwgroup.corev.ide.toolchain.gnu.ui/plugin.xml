@@ -22,6 +22,9 @@
          <toolchain
                toolchainID="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
          </toolchain>
+         <toolchain
+               toolchainID="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base">
+         </toolchain>
       </wizardPage>
    </extension>
 

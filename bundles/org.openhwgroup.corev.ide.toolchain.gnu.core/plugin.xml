@@ -37,7 +37,7 @@
                name="%configuration.elf.debug.name"
                parent="cdt.managedbuild.config.gnu.base">
             <toolChain
-                  id="org.openhwgroup.corev.ide.toolchain.gnu.core.toolChain1"
+                  id="org.openhwgroup.corev.ide.toolchain.gnu.core.toolchain.exe.debug"
                   superClass="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
             </toolChain>
          </configuration>
@@ -49,8 +49,51 @@
                name="%configuration.elf.release.name"
                parent="cdt.managedbuild.config.gnu.base">
             <toolChain
-                  id="org.openhwgroup.corev.ide.toolchain.gnu.core.toolChain1"
+                  id="org.openhwgroup.corev.ide.toolchain.gnu.core.toolchain.exe.release"
                   superClass="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
+            </toolChain>
+         </configuration>
+      </projectType>
+   </extension>
+
+   <extension
+         point="org.eclipse.cdt.managedbuilder.core.buildDefinitions">
+      <managedBuildRevision
+            fileVersion="4.0.0">
+      </managedBuildRevision>
+      <toolChain
+            id="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base"
+            isAbstract="false"
+            name="%toolChain.llvm.name"
+            superClass="ilg.gnumcueclipse.managedbuild.cross.riscv.toolchain.base">
+      </toolChain>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
+            id="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.elf"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="${cross_rm} -rf"
+               id="org.openhwgroup.corev.ide.toolchain.llvm.core.elf.debug"
+               name="%configuration.elf.debug.name"
+               parent="cdt.managedbuild.config.gnu.base">
+            <toolChain
+                  id="org.openhwgroup.corev.ide.toolchain.llvm.core.toolchain.exe.debug"
+                  superClass="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base">
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="${cross_rm} -rf"
+               id="org.openhwgroup.corev.ide.toolchain.llvm.core.elf.release"
+               name="%configuration.elf.release.name"
+               parent="cdt.managedbuild.config.gnu.base">
+            <toolChain
+                  id="org.openhwgroup.corev.ide.toolchain.llvm.core.toolchain.exe.release"
+                  superClass="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base">
             </toolChain>
          </configuration>
       </projectType>
@@ -69,6 +112,9 @@
             id="org.openhwgroup.corev.ide.mbs.gnu.core.templates.HelloCOREVWorld_C_Project">
             <toolChain
                 id="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
+            </toolChain>
+            <toolChain
+                id="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base">
             </toolChain>
       </template>
    </extension>
