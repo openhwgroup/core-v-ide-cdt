@@ -1,13 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
+<!--
+	Copyright (c) 2020 ArSysOp and others
+
+	This program and the accompanying materials are made available under the
+	terms of the Eclipse Public License 2.0 which is available at
+	https://www.eclipse.org/legal/epl-2.0/.
+
+	SPDX-License-Identifier: EPL-2.0
+
+	Contributors:
+		Alexander Fedorov (ArSysOp) - initial API and implementation
+-->
 <plugin>
    <extension
          point="org.eclipse.cdt.managedbuilder.core.buildDefinitions">
+      <managedBuildRevision
+            fileVersion="4.0.0">
+      </managedBuildRevision>
       <toolChain
-            id="org.openhwgroup.corev.ide.toolchain.gnu.cross.base"
+            id="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base"
             isAbstract="false"
-            name="%toolChain.name">
+            name="%toolChain.name"
+            superClass="ilg.gnumcueclipse.managedbuild.cross.riscv.toolchain.base">
       </toolChain>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
+            id="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.elf"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="${cross_rm} -rf"
+               id="org.openhwgroup.corev.ide.toolchain.gnu.core.elf.debug"
+               name="%configuration.elf.debug.name"
+               parent="cdt.managedbuild.config.gnu.base">
+            <toolChain
+                  id="org.openhwgroup.corev.ide.toolchain.gnu.core.toolChain1"
+                  superClass="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
+            </toolChain>
+         </configuration>
+         <configuration
+               artifactExtension="elf"
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="${cross_rm} -rf"
+               id="org.openhwgroup.corev.ide.toolchain.gnu.core.elf.release"
+               name="%configuration.elf.release.name"
+               parent="cdt.managedbuild.config.gnu.base">
+            <toolChain
+                  id="org.openhwgroup.corev.ide.toolchain.gnu.core.toolChain1"
+                  superClass="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
+            </toolChain>
+         </configuration>
+      </projectType>
+   </extension>
+
+   <extension point="org.eclipse.cdt.core.templates">
+      <template
+            filterPattern=".*gcc"
+            id="org.openhwgroup.corev.ide.mbs.gnu.core.templates.HelloCOREVWorld_C_Project"
+            location="$nl$/templates/projects/HelloWorld_C_Project/template.xml"
+            projectType="org.eclipse.cdt.build.core.buildArtefactType.exe">
+      </template>
+   </extension>
+   <extension point="org.eclipse.cdt.core.templateAssociations">
+      <template
+            id="org.openhwgroup.corev.ide.mbs.gnu.core.templates.HelloCOREVWorld_C_Project">
+            <toolChain
+                id="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
+            </toolChain>
+      </template>
    </extension>
 
 </plugin>
