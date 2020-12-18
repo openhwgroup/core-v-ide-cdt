@@ -45,17 +45,15 @@
    <features>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.cdt"/>
-      <feature id="ilg.gnumcueclipse.codered.feature"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.openocd.feature"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.qemu.feature"/>
-      <feature id="ilg.gnumcueclipse.doc.user.feature"/>
-      <feature id="ilg.gnumcueclipse.managedbuild.cross.arm.feature"/>
-      <feature id="ilg.gnumcueclipse.managedbuild.cross.riscv.feature"/>
-      <feature id="ilg.gnumcueclipse.templates.ad.feature"/>
-      <feature id="ilg.gnumcueclipse.templates.cortexm.feature"/>
-      <feature id="ilg.gnumcueclipse.templates.freescale.feature"/>
-      <feature id="ilg.gnumcueclipse.templates.stm.feature"/>
-      <feature id="ilg.gnumcueclipse.packs.feature"/>
+      <feature id="org.eclipse.embedcdt.codered"/>
+      <feature id="org.eclipse.embedcdt.debug.gdbjtag.openocd"/>
+      <feature id="org.eclipse.embedcdt.debug.gdbjtag.qemu"/>
+      <feature id="org.eclipse.embedcdt.doc.user"/>
+      <feature id="org.eclipse.embedcdt.managedbuild.cross.arm"/>
+      <feature id="org.eclipse.embedcdt.managedbuild.cross.riscv"/>
+      <feature id="org.eclipse.embedcdt.templates.cortexm"/>
+      <feature id="org.eclipse.embedcdt.templates.sifive"/>
+      <feature id="org.eclipse.embedcdt.packs"/>
       <feature id="org.openhwgroup.corev.ide.cdt.feature"/>
       <feature id="org.openhwgroup.corev.ide.feature"/>
       <feature id="org.openhwgroup.corev.ide.toolchain.gnu.feature"/>
