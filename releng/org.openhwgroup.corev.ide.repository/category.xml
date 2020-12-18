@@ -12,6 +12,13 @@
 		Alexander Fedorov (ArSysOp) - initial API and implementation
 -->
 <site>
+	<category-def
+		name="org.openhwgroup.corev.ide.category"
+		label="OpenHW Group CORE-V IDE">
+		<description>
+			OpenHW Group CORE-V IDE based on Eclipse CDT
+		</description>
+	</category-def>
 	<feature
 		id="org.openhwgroup.corev.ide.cdt.feature">
 		<category name="org.openhwgroup.corev.ide.category" />
@@ -25,10 +32,22 @@
 		<category name="org.openhwgroup.corev.ide.category" />
 	</feature>
 	<category-def
-		name="org.openhwgroup.corev.ide.category"
-		label="OpenHW Group CORE-V IDE">
+		name="org.openhwgroup.corev.ide.category.source"
+		label="OpenHW Group CORE-V IDE Developer Resources">
 		<description>
-			OpenHW Group CORE-V IDE based on Eclipse CDT
+			OpenHW Group CORE-V IDE based on Eclipse CDT Developer Resources
 		</description>
 	</category-def>
+	<feature
+		id="org.openhwgroup.corev.ide.cdt.feature.source">
+		<category name="org.openhwgroup.corev.ide.category.source" />
+	</feature>
+	<feature
+		id="org.openhwgroup.corev.ide.feature.source">
+		<category name="org.openhwgroup.corev.ide.category.source" />
+	</feature>
+	<feature
+		id="org.openhwgroup.corev.ide.toolchain.gnu.feature.source">
+		<category name="org.openhwgroup.corev.ide.category.source" />
+	</feature>
 </site>
