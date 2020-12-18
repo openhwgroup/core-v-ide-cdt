@@ -33,7 +33,53 @@
 		<tycho.scmUrl>scm:git:https://github.com/openhwgroup/core-v-ide-cdt.git</tycho.scmUrl>
 		<tycho.version>1.7.0</tycho.version>
 
+		<tycho-snapshot-repo.url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</tycho-snapshot-repo.url>
+		<cbi-jdt-repo.url>https://repo.eclipse.org/content/repositories/eclipse-staging/</cbi-jdt-repo.url>
+		<eclipse-repo.url>https://repo.eclipse.org/content/repositories/cbi/</eclipse-repo.url>
+		<cbi-snapshots-repo.url>https://repo.eclipse.org/content/repositories/cbi-snapshots/</cbi-snapshots-repo.url>
+
 	</properties>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>tycho-snapshots</id>
+			<url>${tycho-snapshot-repo.url}</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+
+		<pluginRepository>
+			<id>cbi-jdt</id>
+			<url>${cbi-jdt-repo.url}</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>cbi-snapshots</id>
+			<url>${cbi-snapshots-repo.url}</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>eclipse</id>
+			<url>${eclipse-repo.url}</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<repositories>
 	</repositories>
