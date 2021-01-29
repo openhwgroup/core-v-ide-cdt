@@ -31,6 +31,8 @@
                name="windowImages"
                value="images\ohw16.png, images\ohw32.png, images\ohw48.png, images\ohw64.png">
          </property>
+         <property name="introBrandingImage" value="product:images/ohw64.png"/>
+		 <property name="introTitle" value="CORE-V IDE"/>
       </product>
    </extension>
 
