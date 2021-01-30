@@ -13,11 +13,30 @@
 		Nikifor Fedorov (ArSysOp) - initial API and implementation
 -->
 <plugin>
-   <extension point="org.eclipse.ui.intro">
-	<introProductBinding
-		 introId="org.eclipse.ui.intro.universal"
-		 productId="org.openhwgroup.corev.ide.product">
-	</introProductBinding>
-</extension>
+	<extension point="org.eclipse.ui.intro">
+		<intro
+			id="org.openhwgroup.corev.ide.intro"
+			class="org.eclipse.ui.intro.config.CustomizableIntroPart">
+		</intro>
+		<introProductBinding
+		 	introId="org.openhwgroup.corev.ide.intro"
+		 	productId="org.openhwgroup.corev.ide.product">
+		</introProductBinding>
+	</extension>
+	<extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            id="org.eclipse.passage.loc.configId"
+            introId="org.openhwgroup.corev.ide.intro"
+            content="introContent.xml">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  os="win32,linux,macosx"
+                  kind="html">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
 
 </plugin>
