@@ -94,7 +94,7 @@
 					value="src/buildfile" />
 				<simple
 					name="target"
-					value="src/../llvmbuildfile" />
+					value="src/../Makefile" />
 				<simple
 					name="replaceable"
 					value="true" />
