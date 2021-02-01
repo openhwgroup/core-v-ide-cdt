@@ -90,7 +90,7 @@
                cleanCommand="${cross_rm} -rf"
                id="org.openhwgroup.corev.ide.toolchain.llvm.core.elf.release"
                name="%configuration.elf.release.name"
-               parent="cdt.managedbuild.config.llvm.base">
+               parent="cdt.managedbuild.config.gnu.base">
             <toolChain
                   id="org.openhwgroup.corev.ide.toolchain.llvm.core.toolchain.exe.release"
                   superClass="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base">
