@@ -26,7 +26,7 @@
 	<extension
          point="org.eclipse.ui.intro.config">
       <config
-            id="org.eclipse.passage.loc.configId"
+            id="org.openhwgroup.corev.ide.configId"
             introId="org.openhwgroup.corev.ide.intro"
             content="introContent.xml">
          <presentation
