@@ -90,7 +90,7 @@
                cleanCommand="${cross_rm} -rf"
                id="org.openhwgroup.corev.ide.toolchain.llvm.core.elf.release"
                name="%configuration.elf.release.name"
-               parent="cdt.managedbuild.config.gnu.base">
+               parent="cdt.managedbuild.config.llvm.base">
             <toolChain
                   id="org.openhwgroup.corev.ide.toolchain.llvm.core.toolchain.exe.release"
                   superClass="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base">
@@ -101,21 +101,20 @@
 
    <extension point="org.eclipse.cdt.core.templates">
       <template
-            filterPattern=".*gcc"
-            id="org.openhwgroup.corev.ide.mbs.gnu.core.templates.HelloCOREVWorld_C_Project"
-            location="$nl$/templates/projects/HelloWorld_C_Project/template.xml"
+            id="org.openhwgroup.corev.ide.mbs.gnu.core.templates.gcc"
+            location="templates/projects/hello_world_gcc/template.xml"
             projectType="org.eclipse.cdt.build.core.buildArtefactType.exe">
+         <toolChain
+               id="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
+         </toolChain>
       </template>
-   </extension>
-   <extension point="org.eclipse.cdt.core.templateAssociations">
       <template
-            id="org.openhwgroup.corev.ide.mbs.gnu.core.templates.HelloCOREVWorld_C_Project">
-            <toolChain
-                id="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
-            </toolChain>
-            <toolChain
-                id="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base">
-            </toolChain>
+            id="org.openhwgroup.corev.ide.mbs.gnu.core.templates.llvm"
+            location="templates/projects/hello_world_llvm/template.xml"
+            projectType="org.eclipse.cdt.build.core.buildArtefactType.exe">
+         <toolChain
+               id="org.openhwgroup.corev.ide.mbs.llvm.core.toolchain.base">
+         </toolChain>
       </template>
    </extension>
 
