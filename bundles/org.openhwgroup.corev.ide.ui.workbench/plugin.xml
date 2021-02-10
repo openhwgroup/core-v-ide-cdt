@@ -17,9 +17,9 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="org.openhwgroup.corev.ide.ui.workbench.CoreVPerspective"
-            icon="../org.openhwgroup.corev.ide/images/ohw16.png"
+            icon="platform:/plugin/org.openhwgroup.corev.ide/images/ohw16.png"
             id="org.openhwgroup.corev.ide.ui.workbench.perspective"
-            name="CORE-V Development">
+            name="%Perspective-Name">
       </perspective>
    </extension>
 </plugin>

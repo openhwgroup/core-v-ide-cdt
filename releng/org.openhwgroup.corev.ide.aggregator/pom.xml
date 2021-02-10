@@ -35,6 +35,7 @@
 
 		<module>..\..\bundles\org.openhwgroup.corev.ide</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.ui.intro</module>
+		<module>..\..\bundles\org.openhwgroup.corev.ide.ui.workbench</module>
 		<module>..\..\features\org.openhwgroup.corev.ide.feature</module>
 
 		<module>..\..\releng\org.openhwgroup.corev.ide.repository</module>
