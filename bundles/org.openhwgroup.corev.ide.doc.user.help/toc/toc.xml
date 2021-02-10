@@ -11,7 +11,7 @@
 	Contributors:
 		Nikifor Fedorov (ArSysOp) - initial API and implementation
 -->
-<toc label="CORE-V Development" topic="html/primary.html">
+<toc label="CORE-V User Guide" topic="html/primary.html">
    <topic label="User Guide">
    		<anchor id="guide"/>
    </topic>
