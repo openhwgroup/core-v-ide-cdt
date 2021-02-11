@@ -33,6 +33,8 @@
 		<module>..\..\bundles\org.openhwgroup.corev.ide.debug.ui</module>
 		<module>..\..\features\org.openhwgroup.corev.ide.cdt.feature</module>
 
+		<module>..\..\bundles\org.openhwgroup.corev.ide.doc.user</module>
+
 		<module>..\..\bundles\org.openhwgroup.corev.ide</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.ui.intro</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.ui.workbench</module>

@@ -44,6 +44,13 @@
          unpack="false"/>
          
    <plugin
+         id="org.openhwgroup.corev.ide.doc.user"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
          id="org.openhwgroup.corev.ide.ui.intro"
          download-size="0"
          install-size="0"
