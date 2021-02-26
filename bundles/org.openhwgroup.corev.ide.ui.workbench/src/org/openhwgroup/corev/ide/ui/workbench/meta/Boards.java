@@ -14,7 +14,7 @@ package org.openhwgroup.corev.ide.ui.workbench.meta;
 
 import org.eclipse.core.resources.IProject;
 
-public final class Boards extends Property {
+public final class Boards extends PropertyNode {
 
 	public Boards(IProject project) {
 		super(project);

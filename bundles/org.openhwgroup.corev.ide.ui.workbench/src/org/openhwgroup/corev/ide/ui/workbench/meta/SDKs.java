@@ -14,7 +14,7 @@ package org.openhwgroup.corev.ide.ui.workbench.meta;
 
 import org.eclipse.core.resources.IProject;
 
-public final class SDKs extends Property {
+public final class SDKs extends PropertyNode {
 
 	public SDKs(IProject project) {
 		super(project);

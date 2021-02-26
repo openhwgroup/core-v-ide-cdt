@@ -15,7 +15,7 @@ package org.openhwgroup.corev.ide.ui.workbench;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.openhwgroup.corev.ide.ui.workbench.meta.Boards;
-import org.openhwgroup.corev.ide.ui.workbench.meta.Property;
+import org.openhwgroup.corev.ide.ui.workbench.meta.PropertyNode;
 import org.openhwgroup.corev.ide.ui.workbench.meta.Debuggers;
 import org.openhwgroup.corev.ide.ui.workbench.meta.SDKs;
 import org.openhwgroup.corev.ide.ui.workbench.meta.Toolchains;
@@ -30,7 +30,7 @@ public final class ContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IProject) {
-			return new Property[] { //
+			return new PropertyNode[] { //
 					new Toolchains((IProject) parentElement), //
 					new Boards((IProject) parentElement), //
 					new SDKs((IProject) parentElement), //
@@ -41,8 +41,8 @@ public final class ContentProvider implements ITreeContentProvider {
 
 	@Override
 	public Object getParent(Object element) {
-		if (element instanceof Property) {
-			return ((Property) element).project();
+		if (element instanceof PropertyNode) {
+			return ((PropertyNode) element).project();
 		}
 		return null;
 	}

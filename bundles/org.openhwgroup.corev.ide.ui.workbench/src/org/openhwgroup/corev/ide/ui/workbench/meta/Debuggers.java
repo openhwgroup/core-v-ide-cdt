@@ -14,7 +14,7 @@ package org.openhwgroup.corev.ide.ui.workbench.meta;
 
 import org.eclipse.core.resources.IProject;
 
-public final class Debuggers extends Property {
+public final class Debuggers extends PropertyNode {
 
 	public Debuggers(IProject project) {
 		super(project);

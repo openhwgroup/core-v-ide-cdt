@@ -14,7 +14,7 @@ package org.openhwgroup.corev.ide.ui.workbench.meta;
 
 import org.eclipse.core.resources.IProject;
 
-public final class Toolchains extends Property {
+public final class Toolchains extends PropertyNode {
 
 	public Toolchains(IProject project) {
 		super(project);

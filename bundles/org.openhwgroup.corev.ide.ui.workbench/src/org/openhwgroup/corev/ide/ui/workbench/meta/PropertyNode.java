@@ -22,11 +22,11 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Bundle;
 
-public abstract class Property {
+public abstract class PropertyNode {
 
 	private final IProject project;
 
-	Property(IProject project) {
+	PropertyNode(IProject project) {
 		this.project = project;
 	}
 

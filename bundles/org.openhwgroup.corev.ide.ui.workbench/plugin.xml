@@ -85,7 +85,7 @@
          <possibleChildren>
             <or>
                <instanceof
-                     value="org.openhwgroup.corev.ide.ui.workbench.meta.Property">
+                     value="org.openhwgroup.corev.ide.ui.workbench.meta.PropertyNode">
                </instanceof>
             </or>
          </possibleChildren>
