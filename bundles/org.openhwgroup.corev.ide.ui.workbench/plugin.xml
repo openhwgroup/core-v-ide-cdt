@@ -30,12 +30,12 @@
             class="org.eclipse.ui.navigator.CommonNavigator"
             icon="platform:/plugin/org.openhwgroup.corev.ide/images/ohw16.png"
             id="org.openhwgroup.corev.ide.ui.workbench.explorer"
-            name="Project Explorer"
+            name="%ProjectsView-Name"
             restorable="true">
       </view>
       <category
             id="org.openhwgroup.corev.ide.ui.workbench.category"
-            name="CORE-V">
+            name="%Category-Name">
       </category>
    </extension>
    <extension

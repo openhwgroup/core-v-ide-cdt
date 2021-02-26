@@ -12,8 +12,13 @@
  *******************************************************************************/
 package org.openhwgroup.corev.ide.ui.workbench;
 
-public final class ProjectExplorer {
+import java.util.function.Supplier;
 
-	public static final String ID = "org.openhwgroup.corev.ide.ui.workbench.explorer";
+public final class CoreVProjectsIdentifier implements Supplier<String>{
+
+	@Override
+	public String get() {
+		return "org.openhwgroup.corev.ide.ui.workbench.explorer";
+	}
 
 }
