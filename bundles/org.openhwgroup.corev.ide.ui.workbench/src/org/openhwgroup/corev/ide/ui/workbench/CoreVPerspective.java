@@ -22,8 +22,8 @@ public final class CoreVPerspective implements IPerspectiveFactory {
 		String editorArea = layout.getEditorArea();
 		layout.setFixed(true);
 		layout.setEditorAreaVisible(true);
-		layout.addView(new CoreVProjectsIdentifier().get(), IPageLayout.LEFT, 0.25f, editorArea);
-		layout.addView(IPageLayout.ID_OUTLINE, IPageLayout.BOTTOM, 0.5f, new CoreVProjectsIdentifier().get());
+		layout.addView(new CoreVProjectsViewIdentifier().get(), IPageLayout.LEFT, 0.25f, editorArea);
+		layout.addView(IPageLayout.ID_OUTLINE, IPageLayout.BOTTOM, 0.5f, new CoreVProjectsViewIdentifier().get());
 		layout.addView(IPageLayout.ID_PROBLEM_VIEW, IPageLayout.BOTTOM, 0.7f, editorArea);
 	}
 

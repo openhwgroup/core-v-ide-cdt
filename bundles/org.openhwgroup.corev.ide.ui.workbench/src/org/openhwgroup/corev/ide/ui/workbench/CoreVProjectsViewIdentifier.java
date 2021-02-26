@@ -14,7 +14,7 @@ package org.openhwgroup.corev.ide.ui.workbench;
 
 import java.util.function.Supplier;
 
-public final class CoreVProjectsIdentifier implements Supplier<String>{
+public final class CoreVProjectsViewIdentifier implements Supplier<String> {
 
 	@Override
 	public String get() {
