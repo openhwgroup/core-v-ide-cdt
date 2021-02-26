@@ -52,6 +52,9 @@
             <contentExtension
                   pattern="org.eclipse.ui.navigator.resources.filters.*">
             </contentExtension>
+            <contentExtension
+                  pattern="org.openhwgroup.corev.ide.ui.workbench.projectStructure">
+            </contentExtension>
          </includes>
       </viewerContentBinding>
       <viewerActionBinding
@@ -62,5 +65,30 @@
             </actionExtension>
          </includes>
       </viewerActionBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <navigatorContent
+            activeByDefault="true"
+            contentProvider="org.openhwgroup.corev.ide.ui.workbench.ContentProvider"
+            id="org.openhwgroup.corev.ide.ui.workbench.projectStructure"
+            labelProvider="org.openhwgroup.corev.ide.ui.workbench.LabelProvider"
+            name="%Content-Name"
+            priority="normal">
+         <triggerPoints>
+            <or>
+               <instanceof
+                     value="org.eclipse.core.resources.IProject">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="org.openhwgroup.corev.ide.ui.workbench.meta.Property">
+               </instanceof>
+            </or>
+         </possibleChildren>
+      </navigatorContent>
    </extension>
 </plugin>
