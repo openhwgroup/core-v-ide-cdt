@@ -27,7 +27,7 @@ public final class SDKs extends PropertyNode {
 
 	@Override
 	public String icon() {
-		return "images/shell.png";
+		return "images/box.png";
 	}
 
 }
