@@ -13,6 +13,7 @@
 package org.openhwgroup.corev.ide.ui.workbench.meta;
 
 import org.eclipse.core.resources.IProject;
+import org.openhwgroup.corev.ide.ui.workbench.WorkbenchPlugin;
 
 public final class SDKs extends PropertyNode {
 
@@ -27,7 +28,7 @@ public final class SDKs extends PropertyNode {
 
 	@Override
 	public String icon() {
-		return "images/box.png";
+		return WorkbenchPlugin.IMAGE_SDKS;
 	}
 
 }

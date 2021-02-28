@@ -13,6 +13,7 @@
 package org.openhwgroup.corev.ide.ui.workbench.meta;
 
 import org.eclipse.core.resources.IProject;
+import org.openhwgroup.corev.ide.ui.workbench.WorkbenchPlugin;
 
 public final class Toolchains extends PropertyNode {
 
@@ -27,7 +28,7 @@ public final class Toolchains extends PropertyNode {
 
 	@Override
 	public String icon() {
-		return "images/shell.png";
+		return WorkbenchPlugin.IMAGE_TOOLCHAINS;
 	}
 
 }

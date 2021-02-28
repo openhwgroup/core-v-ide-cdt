@@ -12,15 +12,9 @@
  *******************************************************************************/
 package org.openhwgroup.corev.ide.ui.workbench.meta;
 
-import java.net.URL;
-
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
-import org.osgi.framework.Bundle;
+import org.openhwgroup.corev.ide.ui.workbench.WorkbenchPlugin;
 
 public abstract class PropertyNode {
 
@@ -31,10 +25,7 @@ public abstract class PropertyNode {
 	}
 
 	public final Image image() {
-		Bundle bundle = Platform.getBundle("org.openhwgroup.corev.ide.ui.workbench");
-		URL url = FileLocator.find(bundle, new Path(icon()), null);
-		ImageDescriptor imageDesc = ImageDescriptor.createFromURL(url);
-		return imageDesc.createImage();
+		return WorkbenchPlugin.get().getImageRegistry().get(icon());
 	}
 
 	public abstract String title();
