@@ -23,7 +23,7 @@ public final class Boards extends PropertyNode {
 
 	@Override
 	public String title() {
-		return "Boards";
+		return "Boards"; //$NON-NLS-1$
 	}
 
 	@Override

@@ -23,7 +23,7 @@ public final class SDKs extends PropertyNode {
 
 	@Override
 	public String title() {
-		return "SDKs";
+		return "SDKs"; //$NON-NLS-1$
 	}
 
 	@Override

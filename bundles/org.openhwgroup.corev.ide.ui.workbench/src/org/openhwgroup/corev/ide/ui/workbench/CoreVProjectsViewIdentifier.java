@@ -18,7 +18,7 @@ public final class CoreVProjectsViewIdentifier implements Supplier<String> {
 
 	@Override
 	public String get() {
-		return "org.openhwgroup.corev.ide.ui.workbench.explorer";
+		return "org.openhwgroup.corev.ide.ui.workbench.explorer"; //$NON-NLS-1$
 	}
 
 }

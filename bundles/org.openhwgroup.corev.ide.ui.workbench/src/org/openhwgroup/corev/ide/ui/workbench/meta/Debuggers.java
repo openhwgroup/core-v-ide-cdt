@@ -23,7 +23,7 @@ public final class Debuggers extends PropertyNode {
 
 	@Override
 	public String title() {
-		return "Debuggers";
+		return "Debuggers"; //$NON-NLS-1$
 	}
 
 	@Override

@@ -23,7 +23,7 @@ public final class Toolchains extends PropertyNode {
 
 	@Override
 	public String title() {
-		return "Toolchains";
+		return "Toolchains"; //$NON-NLS-1$
 	}
 
 	@Override

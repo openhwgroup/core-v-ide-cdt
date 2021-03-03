@@ -25,11 +25,11 @@ import org.osgi.framework.BundleContext;
 
 public class WorkbenchPlugin extends AbstractUIPlugin {
 
-	public static final String PLUGIN_ID = "org.openhwgroup.corev.ide.ui.workbench";
-	public static final String IMAGE_BOARDS = "boards";
-	public static final String IMAGE_TOOLCHAINS = "toolchains";
-	public static final String IMAGE_SDKS = "sdks";
-	public static final String IMAGE_DEBUGGERS = "debuggers";
+	public static final String PLUGIN_ID = "org.openhwgroup.corev.ide.ui.workbench"; //$NON-NLS-1$
+	public static final String IMAGE_BOARDS = "boards"; //$NON-NLS-1$
+	public static final String IMAGE_TOOLCHAINS = "toolchains"; //$NON-NLS-1$
+	public static final String IMAGE_SDKS = "sdks"; //$NON-NLS-1$
+	public static final String IMAGE_DEBUGGERS = "debuggers"; //$NON-NLS-1$
 
 	private static AbstractUIPlugin plugin;
 
@@ -39,10 +39,10 @@ public class WorkbenchPlugin extends AbstractUIPlugin {
 
 	@Override
 	protected void initializeImageRegistry(ImageRegistry registry) {
-		addIcon(registry, IMAGE_BOARDS, "images/board.png");
-		addIcon(registry, IMAGE_TOOLCHAINS, "images/shell.png");
-		addIcon(registry, IMAGE_SDKS, "images/box.png");
-		addIcon(registry, IMAGE_DEBUGGERS, "images/debug.png");
+		addIcon(registry, IMAGE_BOARDS, "images/board.png"); //$NON-NLS-1$
+		addIcon(registry, IMAGE_TOOLCHAINS, "images/shell.png"); //$NON-NLS-1$
+		addIcon(registry, IMAGE_SDKS, "images/box.png"); //$NON-NLS-1$
+		addIcon(registry, IMAGE_DEBUGGERS, "images/debug.png"); //$NON-NLS-1$
 	}
 
 	@Override
