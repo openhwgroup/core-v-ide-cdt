@@ -22,7 +22,7 @@ public final class LabelProvider extends org.eclipse.jface.viewers.LabelProvider
 		if (element instanceof PropertyNode) {
 			return ((PropertyNode) element).image();
 		}
-		return null;
+		return super.getImage(element);
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public final class LabelProvider extends org.eclipse.jface.viewers.LabelProvider
 		if (element instanceof PropertyNode) {
 			return ((PropertyNode) element).title();
 		}
-		return null;
+		return super.getText(element);
 	}
 
 }

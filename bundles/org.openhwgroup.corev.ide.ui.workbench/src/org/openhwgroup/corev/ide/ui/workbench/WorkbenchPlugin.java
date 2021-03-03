@@ -16,11 +16,9 @@ import java.net.URL;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
 public class WorkbenchPlugin extends AbstractUIPlugin {
@@ -32,6 +30,7 @@ public class WorkbenchPlugin extends AbstractUIPlugin {
 	public static final String IMAGE_DEBUGGERS = "debuggers"; //$NON-NLS-1$
 
 	private static AbstractUIPlugin plugin;
+	private BundleContext context;
 
 	public static AbstractUIPlugin getDefault() {
 		return plugin;
@@ -48,21 +47,21 @@ public class WorkbenchPlugin extends AbstractUIPlugin {
 	@Override
 	public void start(BundleContext context) throws Exception {
 		plugin = this;
+		this.context = context;
 		super.start(context);
-		context.getBundle();
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		super.stop(context);
+		this.context = null;
 		plugin = null;
 	}
 
 	private void addIcon(ImageRegistry registry, String key, String path) {
-		Bundle bundle = Platform.getBundle(PLUGIN_ID);
-		URL url = FileLocator.find(bundle, new Path(path), null);
+		URL url = FileLocator.find(context.getBundle(), new Path(path), null);
 		ImageDescriptor image = ImageDescriptor.createFromURL(url);
 		registry.put(key, image);
 	}
-	
+
 }
