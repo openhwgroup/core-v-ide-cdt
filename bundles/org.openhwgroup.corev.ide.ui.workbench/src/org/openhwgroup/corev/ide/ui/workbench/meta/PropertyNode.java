@@ -25,7 +25,7 @@ public abstract class PropertyNode {
 	}
 
 	public final Image image() {
-		return WorkbenchPlugin.get().getImageRegistry().get(icon());
+		return WorkbenchPlugin.getDefault().getImageRegistry().get(icon());
 	}
 
 	public abstract String title();
