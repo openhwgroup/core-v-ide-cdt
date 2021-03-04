@@ -18,7 +18,7 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.ui.ide.workbench"
-            name="CORE-V IDE">
+            name="%productName">
          <property
                name="aboutImage"
                value="images\ohw_lg.png">

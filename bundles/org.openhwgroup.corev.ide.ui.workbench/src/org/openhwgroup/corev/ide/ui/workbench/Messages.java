@@ -10,20 +10,23 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.ui.workbench.meta;
+package org.openhwgroup.corev.ide.ui.workbench;
 
-import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.Messages;
+import org.eclipse.osgi.util.NLS;
 
-public final class Debuggers extends PropertyNode {
+public class Messages {
 
-	public Debuggers(IProject project) {
-		super(project);
+	private static final String BUNDLE_NAME = "org.openhwgroup.corev.ide.ui.workbench.messages"; //$NON-NLS-1$ 
+	public static String Boards_title;
+	public static String Toolchains_title;
+	public static String SDKs_title;
+	public static String Debuggers_title;
+	
+	static {
+		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
 	}
 
-	@Override
-	public String title() {
-		return Messages.Debuggers_title;
+	private Messages() {
 	}
-
+	
 }
