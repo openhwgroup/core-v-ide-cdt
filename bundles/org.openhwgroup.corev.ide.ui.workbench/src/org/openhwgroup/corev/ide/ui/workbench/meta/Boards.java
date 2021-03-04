@@ -13,7 +13,7 @@
 package org.openhwgroup.corev.ide.ui.workbench.meta;
 
 import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.WorkbenchPlugin;
+import org.openhwgroup.corev.ide.ui.workbench.Messages;
 
 public final class Boards extends PropertyNode {
 
@@ -23,12 +23,7 @@ public final class Boards extends PropertyNode {
 
 	@Override
 	public String title() {
-		return "Boards"; //$NON-NLS-1$
-	}
-
-	@Override
-	public String icon() {
-		return WorkbenchPlugin.IMAGE_BOARDS;
+		return Messages.Boards_title; //$NON-NLS-1$
 	}
 
 }

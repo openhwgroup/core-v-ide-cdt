@@ -25,12 +25,10 @@ public abstract class PropertyNode {
 	}
 
 	public final Image image() {
-		return WorkbenchPlugin.getDefault().getImageRegistry().get(icon());
+		return WorkbenchPlugin.getDefault().getImageRegistry().get(getClass().getName());
 	}
 
 	public abstract String title();
-
-	public abstract String icon();
 
 	public final IProject project() {
 		return project;

@@ -15,8 +15,8 @@ package org.openhwgroup.corev.ide.ui.workbench;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.openhwgroup.corev.ide.ui.workbench.meta.Boards;
-import org.openhwgroup.corev.ide.ui.workbench.meta.PropertyNode;
 import org.openhwgroup.corev.ide.ui.workbench.meta.Debuggers;
+import org.openhwgroup.corev.ide.ui.workbench.meta.PropertyNode;
 import org.openhwgroup.corev.ide.ui.workbench.meta.SDKs;
 import org.openhwgroup.corev.ide.ui.workbench.meta.Toolchains;
 

@@ -19,15 +19,13 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.openhwgroup.corev.ide.ui.workbench.meta.Boards;
+import org.openhwgroup.corev.ide.ui.workbench.meta.Debuggers;
+import org.openhwgroup.corev.ide.ui.workbench.meta.SDKs;
+import org.openhwgroup.corev.ide.ui.workbench.meta.Toolchains;
 import org.osgi.framework.BundleContext;
 
 public class WorkbenchPlugin extends AbstractUIPlugin {
-
-	public static final String PLUGIN_ID = "org.openhwgroup.corev.ide.ui.workbench"; //$NON-NLS-1$
-	public static final String IMAGE_BOARDS = "boards"; //$NON-NLS-1$
-	public static final String IMAGE_TOOLCHAINS = "toolchains"; //$NON-NLS-1$
-	public static final String IMAGE_SDKS = "sdks"; //$NON-NLS-1$
-	public static final String IMAGE_DEBUGGERS = "debuggers"; //$NON-NLS-1$
 
 	private static AbstractUIPlugin plugin;
 	private BundleContext context;
@@ -38,10 +36,10 @@ public class WorkbenchPlugin extends AbstractUIPlugin {
 
 	@Override
 	protected void initializeImageRegistry(ImageRegistry registry) {
-		addIcon(registry, IMAGE_BOARDS, "images/board.png"); //$NON-NLS-1$
-		addIcon(registry, IMAGE_TOOLCHAINS, "images/shell.png"); //$NON-NLS-1$
-		addIcon(registry, IMAGE_SDKS, "images/box.png"); //$NON-NLS-1$
-		addIcon(registry, IMAGE_DEBUGGERS, "images/debug.png"); //$NON-NLS-1$
+		addIcon(registry, Boards.class.getName(), "images/board.png"); //$NON-NLS-1$
+		addIcon(registry, Toolchains.class.getName(), "images/shell.png"); //$NON-NLS-1$
+		addIcon(registry, SDKs.class.getName(), "images/box.png"); //$NON-NLS-1$
+		addIcon(registry, Debuggers.class.getName(), "images/debug.png"); //$NON-NLS-1$
 	}
 
 	@Override
