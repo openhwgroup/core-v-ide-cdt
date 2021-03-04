@@ -16,7 +16,7 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages {
 
-	private static final String BUNDLE_NAME = "org.openhwgroup.corev.ide.ui.workbench.messages"; 
+	private static final String BUNDLE_NAME = "org.openhwgroup.corev.ide.ui.workbench.messages"; //$NON-NLS-1$ 
 	public static String Boards_title;
 	public static String Toolchains_title;
 	public static String SDKs_title;
