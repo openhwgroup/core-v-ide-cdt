@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Toolchain
+Bundle-SymbolicName: org.openhwgroup.corev.toolchain;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.openhwgroup.corev.toolchain
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: ilg.gnumcueclipse.managedbuild.cross.riscv;bundle-version="2.9.3"
