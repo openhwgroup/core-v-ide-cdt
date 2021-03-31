@@ -40,7 +40,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.openhwgroup.corev.ide.toolchain.gnu.core"
+         id="org.openhwgroup.corev.ide.toolchains.gnu.core"
          download-size="0"
          install-size="0"
          version="0.0.0"

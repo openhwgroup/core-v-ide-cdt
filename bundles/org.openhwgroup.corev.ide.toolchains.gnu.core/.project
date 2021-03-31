@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.openhwgroup.corev.ide.toolchain.gnu.core</name>
+	<name>org.openhwgroup.corev.ide.toolchains.gnu.core</name>
 	<comment></comment>
 	<projects>
 	</projects>

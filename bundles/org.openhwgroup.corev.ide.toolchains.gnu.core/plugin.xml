@@ -33,11 +33,11 @@
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
                cleanCommand="${cross_rm} -rf"
-               id="org.openhwgroup.corev.ide.toolchain.gnu.core.elf.debug"
+               id="org.openhwgroup.corev.ide.toolchains.gnu.core.elf.debug"
                name="%configuration.elf.debug.name"
                parent="cdt.managedbuild.config.gnu.base">
             <toolChain
-                  id="org.openhwgroup.corev.ide.toolchain.gnu.core.toolchain.exe.debug"
+                  id="org.openhwgroup.corev.ide.toolchains.gnu.core.toolchain.exe.debug"
                   superClass="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
             </toolChain>
          </configuration>
@@ -45,11 +45,11 @@
                artifactExtension="elf"
                buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
                cleanCommand="${cross_rm} -rf"
-               id="org.openhwgroup.corev.ide.toolchain.gnu.core.elf.release"
+               id="org.openhwgroup.corev.ide.toolchains.gnu.core.elf.release"
                name="%configuration.elf.release.name"
                parent="cdt.managedbuild.config.gnu.base">
             <toolChain
-                  id="org.openhwgroup.corev.ide.toolchain.gnu.core.toolchain.exe.release"
+                  id="org.openhwgroup.corev.ide.toolchains.gnu.core.toolchain.exe.release"
                   superClass="org.openhwgroup.corev.ide.mbs.gnu.core.toolchain.base">
             </toolChain>
          </configuration>
