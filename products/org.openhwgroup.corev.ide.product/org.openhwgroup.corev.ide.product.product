@@ -2,7 +2,7 @@
 <?pde version="3.5"?>
 
 <!--
-	Copyright (c) 2020 ArSysOp and others
+	Copyright (c) 2020, 2021 ArSysOp and others
 
 	This program and the accompanying materials are made available under the
 	terms of the Eclipse Public License 2.0 which is available at
@@ -55,7 +55,7 @@
       <feature id="org.eclipse.embedcdt.packs"/>
       <feature id="org.openhwgroup.corev.ide.cdt.feature"/>
       <feature id="org.openhwgroup.corev.ide.feature"/>
-      <feature id="org.openhwgroup.corev.ide.toolchain.gnu.feature"/>
+      <feature id="org.openhwgroup.corev.ide.toolchains.gnu.feature"/>
    </features>
 
    <configurations>
