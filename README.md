@@ -18,7 +18,7 @@ SPDX-License-Identifier: EPL-2.0
 ### Building
 
 #### Prerequisites:
- 1. Java (JDK) 1.8+
+ 1. Java (JDK) 11+
  2. Apache Maven 3.6.3
  3. Internet access
 
