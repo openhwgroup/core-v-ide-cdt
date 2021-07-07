@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!-- 
+# Copyright (c) Ashling-Microsystems and 2020 
+
+#
+# This program and the accompanying materials are made available under the
+# terms of the Eclipse Public License 2.0 which is available at
+# https://www.eclipse.org/legal/epl-2.0/.
+#
+# SPDX-License-Identifier: EPL-2.0
+#
+# Contributors : Promodkumar CM   
+ -->
+
+<plugin>
+   <extension
+         point="ilg.gnumcueclipse.managedbuild.cross.riscv.toolchains">
+      <toolchain
+            name="CORE-V-MCU GCC/Newlib"
+            prefix="riscv32-corev-elf-">
+      </toolchain>
+  </extension>
+
+</plugin>
