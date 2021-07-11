@@ -10,5 +10,6 @@ Require-Bundle: com.google.gson;bundle-version="0.0.0",
  org.eclipse.core.resources;bundle-version="0.0.0",
  org.eclipse.core.runtime;bundle-version="0.0.0"
 Export-Package: org.openhwgroup.corev.ide.definition.api,
+ org.openhwgroup.corev.ide.definition.json,
  org.openhwgroup.corev.ide.definition.project,
  org.openhwgroup.corev.ide.definition.storage

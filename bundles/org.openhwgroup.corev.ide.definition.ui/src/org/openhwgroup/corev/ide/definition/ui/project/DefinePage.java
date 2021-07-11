@@ -12,11 +12,14 @@
  *******************************************************************************/
 package org.openhwgroup.corev.ide.definition.ui.project;
 
-import java.util.stream.Collectors;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
+import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
@@ -24,21 +27,20 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Text;
 import org.openhwgroup.corev.ide.definition.api.Board;
 import org.openhwgroup.corev.ide.definition.api.Configuration;
-import org.openhwgroup.corev.ide.definition.api.Storage;
 import org.openhwgroup.corev.ide.definition.api.Toolchain;
-import org.openhwgroup.corev.ide.definition.project.EmptyConfiguration;
+import org.openhwgroup.corev.ide.definition.project.SimpleConfiguration;
 import org.openhwgroup.corev.ide.definition.storage.JsonStorage;
-import org.openhwgroup.corev.ide.definition.ui.RestrictSelection;
+import org.openhwgroup.corev.ide.definition.storage.Storage;
 
 public final class DefinePage extends WizardPage {
 
 	private String projectName = new String();
 	private String projectPath = new String();
-
+	private List<Board> boards = new LinkedList<>();
+	private List<Toolchain> toolchains = new LinkedList<>();
 	private final Storage storage = new JsonStorage();
 
 	protected DefinePage() {
@@ -103,28 +105,24 @@ public final class DefinePage extends WizardPage {
 		configuration.setText("Project configuration"); //$NON-NLS-1$
 		configuration.setLayout(GridLayoutFactory.swtDefaults().numColumns(2).equalWidth(true).create());
 		configuration.setLayoutData(GridDataFactory.fillDefaults().span(3, 1).grab(true, true).create());
-		List boards = new List(configuration, SWT.BORDER);
-		boards.setItems(boards());
-		boards.addSelectionListener(new RestrictSelection());
-		boards.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
-		List toolchains = new List(configuration, SWT.BORDER);
-		toolchains.setItems(toolchains());
-		toolchains.addSelectionListener(new RestrictSelection());
-		toolchains.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
+		ListViewer boards = new ListViewer(configuration, SWT.BORDER | SWT.MULTI);
+		boards.setLabelProvider(new MetaLabelProvider());
+		boards.setContentProvider(ArrayContentProvider.getInstance());
+		boards.setInput(storage.boards());
+		boards.getControl().setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
+		boards.addSelectionChangedListener(event -> this.boards = event.getStructuredSelection().toList());
+		ListViewer toolchains = new ListViewer(configuration, SWT.BORDER | SWT.MULTI);
+		toolchains.setLabelProvider(new MetaLabelProvider());
+		toolchains.setContentProvider(ArrayContentProvider.getInstance());
+		toolchains.setInput(storage.toolchains());
+		toolchains.getControl().setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
+		toolchains.addSelectionChangedListener(event -> this.toolchains = event.getStructuredSelection().toList());
 		Button boardsButton = new Button(configuration, SWT.PUSH);
 		boardsButton.setLayoutData(GridDataFactory.fillDefaults().grab(true, false).create());
 		boardsButton.setText("Select boards"); //$NON-NLS-1$
 		Button toolchainsButton = new Button(configuration, SWT.PUSH);
 		toolchainsButton.setLayoutData(GridDataFactory.fillDefaults().grab(true, false).create());
 		toolchainsButton.setText("Select toolchains"); //$NON-NLS-1$
-	}
-
-	private String[] boards() {
-		return storage.boards().stream().map(Board::title).collect(Collectors.toList()).toArray(new String[0]);
-	}
-
-	private String[] toolchains() {
-		return storage.toolchains().stream().map(Toolchain::title).collect(Collectors.toList()).toArray(new String[0]);
 	}
 
 	public String name() {
@@ -136,7 +134,7 @@ public final class DefinePage extends WizardPage {
 	}
 
 	public Configuration configuration() {
-		return new EmptyConfiguration();
+		return new SimpleConfiguration(boards, toolchains);
 	}
 
 }

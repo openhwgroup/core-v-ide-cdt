@@ -18,9 +18,8 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.openhwgroup.corev.ide.definition.api.Project;
-import org.openhwgroup.corev.ide.definition.project.CreateProject;
 import org.openhwgroup.corev.ide.definition.project.CoreVProject;
-import org.openhwgroup.corev.ide.definition.storage.JsonConfiguration;
+import org.openhwgroup.corev.ide.definition.project.CreateProject;
 
 public class ProjectWizard extends Wizard implements INewWizard {
 
@@ -42,7 +41,7 @@ public class ProjectWizard extends Wizard implements INewWizard {
 
 	@Override
 	public boolean performFinish() {
-		final Project project = new CoreVProject(page.name(), page.path(), new JsonConfiguration(page.configuration()));
+		final Project project = new CoreVProject(page.name(), page.path(), page.configuration());
 		Job job = Job.create("Creating CORE-V project", monitor -> { //$NON-NLS-1$
 			new CreateProject().accept(project, monitor);
 		});

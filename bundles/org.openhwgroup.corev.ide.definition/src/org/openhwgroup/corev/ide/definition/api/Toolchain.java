@@ -41,9 +41,9 @@ public interface Toolchain {
 	String path();
 	
 	/**
-	 * List of all boards this toolchain is applicable to
+	 * List of all boards identifiers this toolchain is applicable to
 	 * @return list of boards for the toolchain
 	 */
-	List<Board> boards();
+	List<String> boards();
 
 }

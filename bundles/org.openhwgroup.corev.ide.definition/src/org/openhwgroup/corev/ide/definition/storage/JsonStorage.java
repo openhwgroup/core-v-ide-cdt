@@ -18,27 +18,49 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.core.runtime.Platform;
 import org.openhwgroup.corev.ide.definition.api.Board;
-import org.openhwgroup.corev.ide.definition.api.Storage;
 import org.openhwgroup.corev.ide.definition.api.Toolchain;
+import org.openhwgroup.corev.ide.definition.json.DeserializedBoard;
+import org.openhwgroup.corev.ide.definition.json.DeserializedToolchain;
+import org.openhwgroup.corev.ide.definition.project.DefinedBoard;
+import org.openhwgroup.corev.ide.definition.project.DefinedToolchain;
 import org.osgi.framework.FrameworkUtil;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 public final class JsonStorage implements Storage {
 
-	private final Gson gson = new Gson();
+	private final Gson gson = new GsonBuilder() //
+			.registerTypeAdapter(Board.class, new DeserializedBoard()) //
+			.registerTypeAdapter(Toolchain.class, new DeserializedToolchain()) //
+			.create();
 	private final File boards;
 	private final File toolchains;
 
 	public JsonStorage() {
 		this.boards = FrameworkUtil.getBundle(getClass()).getDataFile("boards"); //$NON-NLS-1$
 		this.toolchains = FrameworkUtil.getBundle(getClass()).getDataFile("toolchains"); //$NON-NLS-1$
+		init();
+	}
+
+	private void init() {
+		try {
+			if (!boards.exists()) {
+				Files.createFile(Paths.get(boards.getPath()));
+			}
+			if (!toolchains.exists()) {
+				Files.createFile(Paths.get(toolchains.getPath()));
+			}
+		} catch (IOException e) {
+			Platform.getLog(getClass()).error(e.getMessage(), e);
+		}
 	}
 
 	@Override
@@ -50,8 +72,9 @@ public final class JsonStorage implements Storage {
 
 	@Override
 	public List<Board> boards() {
-		return gson.fromJson(read(boards), new TypeToken<ArrayList<Board>>() {
+		List<Board> fromJson = gson.fromJson(read(boards), new TypeToken<LinkedList<DefinedBoard>>() {
 		}.getType());
+		return Optional.ofNullable(fromJson).orElse(new LinkedList<>());
 	}
 
 	@Override
@@ -63,8 +86,9 @@ public final class JsonStorage implements Storage {
 
 	@Override
 	public List<Toolchain> toolchains() {
-		return gson.fromJson(read(toolchains), new TypeToken<ArrayList<Toolchain>>() {
+		List<Toolchain> fromJson = gson.fromJson(read(toolchains), new TypeToken<LinkedList<DefinedToolchain>>() {
 		}.getType());
+		return Optional.ofNullable(fromJson).orElse(new LinkedList<>());
 	}
 
 	private void write(File file, String json) {

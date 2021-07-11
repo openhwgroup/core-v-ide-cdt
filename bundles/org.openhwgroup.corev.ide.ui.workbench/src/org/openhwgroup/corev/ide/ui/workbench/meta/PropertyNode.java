@@ -13,8 +13,6 @@
 package org.openhwgroup.corev.ide.ui.workbench.meta;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.swt.graphics.Image;
-import org.openhwgroup.corev.ide.ui.workbench.WorkbenchPlugin;
 
 public abstract class PropertyNode {
 
@@ -24,14 +22,12 @@ public abstract class PropertyNode {
 		this.project = project;
 	}
 
-	public final Image image() {
-		return WorkbenchPlugin.getDefault().getImageRegistry().get(getClass().getName());
-	}
-
 	public abstract String title();
 
 	public final IProject project() {
 		return project;
 	}
+	
+	public abstract Object[] getChildren();
 
 }

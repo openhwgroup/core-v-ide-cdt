@@ -12,29 +12,38 @@
  *******************************************************************************/
 package org.openhwgroup.corev.ide.definition.ui.meta;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
+import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+import org.openhwgroup.corev.ide.definition.api.Board;
 import org.openhwgroup.corev.ide.definition.project.DefinedToolchain;
 import org.openhwgroup.corev.ide.definition.storage.JsonStorage;
+import org.openhwgroup.corev.ide.definition.ui.project.MetaLabelProvider;
 
 public final class DefineToolchainWizard extends Wizard implements INewWizard {
 
 	private String identifier = new String();
 	private String title = new String();
 	private String path = new String();
+	private List<String> boards = new LinkedList<>();
 
 	@Override
 	public void addPages() {
@@ -43,8 +52,8 @@ public final class DefineToolchainWizard extends Wizard implements INewWizard {
 
 	@Override
 	public boolean performFinish() {
-		new JsonStorage().put(new DefinedToolchain(identifier, title, path, null));
-		return false;
+		new JsonStorage().put(new DefinedToolchain(identifier, title, path, boards));
+		return true;
 	}
 
 	private final class Page extends WizardPage {
@@ -61,6 +70,7 @@ public final class DefineToolchainWizard extends Wizard implements INewWizard {
 			createStringGroup(container, "Enter toolchain identifier", value -> identifier = value); //$NON-NLS-1$
 			createStringGroup(container, "Enter toolchain display name", value -> title = value); //$NON-NLS-1$
 			createPathGroup(container, "Select toolchain root folder", value -> path = value); //$NON-NLS-1$
+			createViewerGroup(container, "Select applicable boards"); //$NON-NLS-1$
 			setControl(container);
 		}
 
@@ -103,6 +113,25 @@ public final class DefineToolchainWizard extends Wizard implements INewWizard {
 				path.setText(open);
 				modify.accept(path.getText());
 			});
+		}
+
+		private void createViewerGroup(Composite container, String hint) {
+			Group group = new Group(container, SWT.NONE);
+			group.setText(hint);
+			group.setLayout(GridLayoutFactory.swtDefaults().numColumns(1).create());
+			group.setLayoutData(GridDataFactory.fillDefaults().span(3, 1).grab(true, true).create());
+			ListViewer viewer = new ListViewer(group, SWT.BORDER | SWT.MULTI);
+			viewer.setLabelProvider(new MetaLabelProvider());
+			viewer.setContentProvider(ArrayContentProvider.getInstance());
+			viewer.setInput(new JsonStorage().boards());
+			viewer.getControl().setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
+			viewer.addSelectionChangedListener(event -> {
+				List<Board> selected = event.getStructuredSelection().toList();
+				boards = selected.stream().map(Board::identifier).collect(Collectors.toList());
+			});
+			Button boardsButton = new Button(group, SWT.PUSH);
+			boardsButton.setLayoutData(GridDataFactory.fillDefaults().grab(true, false).create());
+			boardsButton.setText("Select boards"); //$NON-NLS-1$
 		}
 
 	}

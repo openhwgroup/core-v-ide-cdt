@@ -10,9 +10,12 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.definition.api;
+package org.openhwgroup.corev.ide.definition.storage;
 
 import java.util.List;
+
+import org.openhwgroup.corev.ide.definition.api.Board;
+import org.openhwgroup.corev.ide.definition.api.Toolchain;
 
 public interface Storage {
 

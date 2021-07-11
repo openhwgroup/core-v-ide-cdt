@@ -12,6 +12,8 @@
  *******************************************************************************/
 package org.openhwgroup.corev.ide.ui.workbench.meta;
 
+import java.util.Collections;
+
 import org.eclipse.core.resources.IProject;
 import org.openhwgroup.corev.ide.ui.workbench.Messages;
 
@@ -24,6 +26,11 @@ public final class SDKs extends PropertyNode {
 	@Override
 	public String title() {
 		return Messages.SDKs_title;
+	}
+
+	@Override
+	public Object[] getChildren() {
+		return Collections.emptyList().toArray();
 	}
 
 }

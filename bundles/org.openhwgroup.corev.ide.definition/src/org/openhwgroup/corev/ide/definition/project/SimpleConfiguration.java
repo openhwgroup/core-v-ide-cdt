@@ -10,7 +10,7 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.definition.storage;
+package org.openhwgroup.corev.ide.definition.project;
 
 import java.util.List;
 
@@ -18,18 +18,14 @@ import org.openhwgroup.corev.ide.definition.api.Board;
 import org.openhwgroup.corev.ide.definition.api.Configuration;
 import org.openhwgroup.corev.ide.definition.api.Toolchain;
 
-public final class JsonConfiguration implements Configuration {
+public final class SimpleConfiguration implements Configuration {
 
 	private final List<Board> boards;
 	private final List<Toolchain> toolchains;
 
-	public JsonConfiguration(List<Board> boards, List<Toolchain> toolchains) {
+	public SimpleConfiguration(List<Board> boards, List<Toolchain> toolchains) {
 		this.boards = boards;
 		this.toolchains = toolchains;
-	}
-
-	public JsonConfiguration(Configuration configuration) {
-		this(configuration.boards(), configuration.toolchains());
 	}
 
 	@Override

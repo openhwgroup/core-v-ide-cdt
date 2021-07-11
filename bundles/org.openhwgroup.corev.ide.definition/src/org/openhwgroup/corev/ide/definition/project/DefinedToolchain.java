@@ -14,7 +14,6 @@ package org.openhwgroup.corev.ide.definition.project;
 
 import java.util.List;
 
-import org.openhwgroup.corev.ide.definition.api.Board;
 import org.openhwgroup.corev.ide.definition.api.Toolchain;
 
 public final class DefinedToolchain implements Toolchain {
@@ -22,9 +21,9 @@ public final class DefinedToolchain implements Toolchain {
 	private final String identifier;
 	private final String title;
 	private final String path;
-	private final List<Board> boards;
+	private final List<String> boards;
 
-	public DefinedToolchain(String identifier, String title, String path, List<Board> boards) {
+	public DefinedToolchain(String identifier, String title, String path, List<String> boards) {
 		this.identifier = identifier;
 		this.title = title;
 		this.path = path;
@@ -47,7 +46,7 @@ public final class DefinedToolchain implements Toolchain {
 	}
 
 	@Override
-	public List<Board> boards() {
+	public List<String> boards() {
 		return boards;
 	}
 
