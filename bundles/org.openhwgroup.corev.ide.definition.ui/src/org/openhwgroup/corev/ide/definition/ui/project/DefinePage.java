@@ -10,7 +10,9 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.definition.ui;
+package org.openhwgroup.corev.ide.definition.ui.project;
+
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.layout.GridDataFactory;
@@ -24,13 +26,20 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Text;
+import org.openhwgroup.corev.ide.definition.api.Board;
 import org.openhwgroup.corev.ide.definition.api.Configuration;
+import org.openhwgroup.corev.ide.definition.api.Storage;
+import org.openhwgroup.corev.ide.definition.api.Toolchain;
 import org.openhwgroup.corev.ide.definition.project.EmptyConfiguration;
+import org.openhwgroup.corev.ide.definition.storage.JsonStorage;
+import org.openhwgroup.corev.ide.definition.ui.RestrictSelection;
 
 public final class DefinePage extends WizardPage {
 
 	private String projectName = new String();
 	private String projectPath = new String();
+
+	private final Storage storage = new JsonStorage();
 
 	protected DefinePage() {
 		super("definition"); //$NON-NLS-1$
@@ -95,8 +104,12 @@ public final class DefinePage extends WizardPage {
 		configuration.setLayout(GridLayoutFactory.swtDefaults().numColumns(2).equalWidth(true).create());
 		configuration.setLayoutData(GridDataFactory.fillDefaults().span(3, 1).grab(true, true).create());
 		List boards = new List(configuration, SWT.BORDER);
+		boards.setItems(boards());
+		boards.addSelectionListener(new RestrictSelection());
 		boards.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
 		List toolchains = new List(configuration, SWT.BORDER);
+		toolchains.setItems(toolchains());
+		toolchains.addSelectionListener(new RestrictSelection());
 		toolchains.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
 		Button boardsButton = new Button(configuration, SWT.PUSH);
 		boardsButton.setLayoutData(GridDataFactory.fillDefaults().grab(true, false).create());
@@ -104,6 +117,14 @@ public final class DefinePage extends WizardPage {
 		Button toolchainsButton = new Button(configuration, SWT.PUSH);
 		toolchainsButton.setLayoutData(GridDataFactory.fillDefaults().grab(true, false).create());
 		toolchainsButton.setText("Select toolchains"); //$NON-NLS-1$
+	}
+
+	private String[] boards() {
+		return storage.boards().stream().map(Board::title).collect(Collectors.toList()).toArray(new String[0]);
+	}
+
+	private String[] toolchains() {
+		return storage.toolchains().stream().map(Toolchain::title).collect(Collectors.toList()).toArray(new String[0]);
 	}
 
 	public String name() {

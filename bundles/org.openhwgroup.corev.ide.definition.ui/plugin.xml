@@ -23,9 +23,28 @@
             id="org.openhwgroup.corev.ide.definition.ui.projectWizard">
       </primaryWizard>
       <wizard
-            class="org.openhwgroup.corev.ide.definition.ui.ProjectWizard"
+            category="org.openhwgroup.corev.ide.definition.category"
+            class="org.openhwgroup.corev.ide.definition.ui.project.ProjectWizard"
+            finalPerspective="org.openhwgroup.corev.ide.ui.workbench.perspective"
+            icon="platform:/plugin/org.openhwgroup.corev.ide/images/ohw16.png"
             id="org.openhwgroup.corev.ide.definition.ui.projectWizard"
-            name="%wizard.title">
+            name="%wizard.project.title"
+            project="true">
+      </wizard>
+      <wizard
+            category="org.openhwgroup.corev.ide.definition.category"
+            class="org.openhwgroup.corev.ide.definition.ui.meta.DefineBoardWizard"
+            icon="platform:/plugin/org.openhwgroup.corev.ide/images/ohw16.png"
+            id="org.openhwgroup.corev.ide.definition.ui.board.wizard"
+            name="%wizard.board.title"
+            project="false">
+      </wizard>
+      <wizard
+            category="org.openhwgroup.corev.ide.definition.category"
+            class="org.openhwgroup.corev.ide.definition.ui.meta.DefineToolchainWizard"
+            icon="platform:/plugin/org.openhwgroup.corev.ide/images/ohw16.png"
+            id="org.openhwgroup.corev.ide.definition.ui.toolchain"
+            name="%wizard.toolchain.title">
       </wizard>
    </extension>
    
