@@ -38,6 +38,8 @@
 		<module>..\..\bundles\org.openhwgroup.corev.ide</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.ui.intro</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.ui.workbench</module>
+		<module>..\..\bundles\org.openhwgroup.corev.ide.definition</module>
+		<module>..\..\bundles\org.openhwgroup.corev.ide.definition.ui</module>
 		<module>..\..\features\org.openhwgroup.corev.ide.feature</module>
 
 		<module>..\..\releng\org.openhwgroup.corev.ide.repository</module>

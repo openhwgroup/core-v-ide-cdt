@@ -10,27 +10,26 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.ui.workbench.meta;
+package org.openhwgroup.corev.ide.definition.api;
 
-import java.util.Collections;
+import java.util.List;
 
-import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.Messages;
+/**
+ * Class represents a single project configuration with all meta in it.
+ * 
+ * @author Nikifor Fedorov
+ *
+ */
+public interface Configuration {
 
-public final class Debuggers extends PropertyNode {
+	/**
+	 * @return list of all boards in current configuration
+	 */
+	List<Board> boards();
 
-	public Debuggers(IProject project) {
-		super(project);
-	}
-
-	@Override
-	public String title() {
-		return Messages.Debuggers_title;
-	}
-
-	@Override
-	public Object[] getChildren() {
-		return Collections.emptyList().toArray();
-	}
+	/**
+	 * @return list of all toolchains
+	 */
+	List<Toolchain> toolchains();
 
 }

@@ -10,27 +10,14 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.ui.workbench.meta;
+package org.openhwgroup.corev.ide.definition.api;
 
-import java.util.Collections;
+public interface Project {
 
-import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.Messages;
+	String name();
 
-public final class Debuggers extends PropertyNode {
+	String path();
 
-	public Debuggers(IProject project) {
-		super(project);
-	}
-
-	@Override
-	public String title() {
-		return Messages.Debuggers_title;
-	}
-
-	@Override
-	public Object[] getChildren() {
-		return Collections.emptyList().toArray();
-	}
+	Configuration configuration();
 
 }

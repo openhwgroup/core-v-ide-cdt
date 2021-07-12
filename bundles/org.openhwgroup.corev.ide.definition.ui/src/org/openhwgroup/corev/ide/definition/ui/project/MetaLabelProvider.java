@@ -10,27 +10,23 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.ui.workbench.meta;
+package org.openhwgroup.corev.ide.definition.ui.project;
 
-import java.util.Collections;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.openhwgroup.corev.ide.definition.api.Board;
+import org.openhwgroup.corev.ide.definition.api.Toolchain;
 
-import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.Messages;
-
-public final class Debuggers extends PropertyNode {
-
-	public Debuggers(IProject project) {
-		super(project);
-	}
+public final class MetaLabelProvider extends LabelProvider {
 
 	@Override
-	public String title() {
-		return Messages.Debuggers_title;
-	}
-
-	@Override
-	public Object[] getChildren() {
-		return Collections.emptyList().toArray();
+	public String getText(Object element) {
+		if (element instanceof Toolchain) {
+			return ((Toolchain) element).title();
+		}
+		if (element instanceof Board) {
+			return ((Board) element).title();
+		}
+		return super.getText(element);
 	}
 
 }

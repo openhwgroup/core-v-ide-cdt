@@ -10,27 +10,21 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.ui.workbench.meta;
+package org.openhwgroup.corev.ide.definition.storage;
 
-import java.util.Collections;
+import java.util.List;
 
-import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.Messages;
+import org.openhwgroup.corev.ide.definition.api.Board;
+import org.openhwgroup.corev.ide.definition.api.Toolchain;
 
-public final class Debuggers extends PropertyNode {
+public interface Storage {
 
-	public Debuggers(IProject project) {
-		super(project);
-	}
+	void put(Board board);
 
-	@Override
-	public String title() {
-		return Messages.Debuggers_title;
-	}
+	List<Board> boards();
 
-	@Override
-	public Object[] getChildren() {
-		return Collections.emptyList().toArray();
-	}
+	void put(Toolchain toolchain);
+
+	List<Toolchain> toolchains();
 
 }

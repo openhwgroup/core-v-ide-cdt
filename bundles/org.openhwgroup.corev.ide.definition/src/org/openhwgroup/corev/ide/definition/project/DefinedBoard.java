@@ -10,27 +10,28 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.ui.workbench.meta;
+package org.openhwgroup.corev.ide.definition.project;
 
-import java.util.Collections;
+import org.openhwgroup.corev.ide.definition.api.Board;
 
-import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.Messages;
+public final class DefinedBoard implements Board {
 
-public final class Debuggers extends PropertyNode {
+	private final String identifier;
+	private final String title;
 
-	public Debuggers(IProject project) {
-		super(project);
+	public DefinedBoard(String identifier, String title) {
+		this.identifier = identifier;
+		this.title = title;
+	}
+
+	@Override
+	public String identifier() {
+		return identifier;
 	}
 
 	@Override
 	public String title() {
-		return Messages.Debuggers_title;
-	}
-
-	@Override
-	public Object[] getChildren() {
-		return Collections.emptyList().toArray();
+		return title;
 	}
 
 }

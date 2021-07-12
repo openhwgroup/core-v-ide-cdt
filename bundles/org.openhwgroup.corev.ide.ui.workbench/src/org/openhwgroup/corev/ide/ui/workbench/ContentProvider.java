@@ -36,6 +36,9 @@ public final class ContentProvider implements ITreeContentProvider {
 					new SDKs((IProject) parentElement), //
 					new Debuggers((IProject) parentElement) };
 		}
+		if (parentElement instanceof PropertyNode) {
+			return ((PropertyNode) parentElement).getChildren();
+		}
 		return new Object[0];
 	}
 
@@ -49,7 +52,7 @@ public final class ContentProvider implements ITreeContentProvider {
 
 	@Override
 	public boolean hasChildren(Object element) {
-		if (element instanceof IProject) {
+		if (element instanceof IProject || element instanceof PropertyNode) {
 			return true;
 		}
 		return false;

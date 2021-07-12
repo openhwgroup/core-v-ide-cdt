@@ -10,27 +10,21 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.ui.workbench.meta;
+package org.openhwgroup.corev.ide.definition.storage;
 
-import java.util.Collections;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.function.Function;
 
-import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.Messages;
+import org.openhwgroup.corev.ide.definition.api.Configuration;
 
-public final class Debuggers extends PropertyNode {
+import com.google.gson.Gson;
 
-	public Debuggers(IProject project) {
-		super(project);
-	}
-
-	@Override
-	public String title() {
-		return Messages.Debuggers_title;
-	}
+public class WriteConfiguration implements Function<Configuration, InputStream> {
 
 	@Override
-	public Object[] getChildren() {
-		return Collections.emptyList().toArray();
+	public InputStream apply(Configuration configuration) {
+		return new ByteArrayInputStream(new Gson().toJson(configuration).getBytes());
 	}
 
 }

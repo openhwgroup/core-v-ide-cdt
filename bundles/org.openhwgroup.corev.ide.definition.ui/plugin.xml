@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+	Copyright (c) 2021 ArSysOp and others
+
+	This program and the accompanying materials are made available under the
+	terms of the Eclipse Public License 2.0 which is available at
+	https://www.eclipse.org/legal/epl-2.0/.
+
+	SPDX-License-Identifier: EPL-2.0
+
+	Contributors:
+		Nikifor Fedorov (ArSysOp) - initial API and implementation
+-->
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.openhwgroup.corev.ide.definition.category"
+            name="%category.title">
+      </category>
+      <primaryWizard
+            id="org.openhwgroup.corev.ide.definition.ui.projectWizard">
+      </primaryWizard>
+      <wizard
+            category="org.openhwgroup.corev.ide.definition.category"
+            class="org.openhwgroup.corev.ide.definition.ui.project.ProjectWizard"
+            finalPerspective="org.openhwgroup.corev.ide.ui.workbench.perspective"
+            icon="platform:/plugin/org.openhwgroup.corev.ide/images/ohw16.png"
+            id="org.openhwgroup.corev.ide.definition.ui.projectWizard"
+            name="%wizard.project.title"
+            project="true">
+      </wizard>
+      <wizard
+            category="org.openhwgroup.corev.ide.definition.category"
+            class="org.openhwgroup.corev.ide.definition.ui.meta.DefineBoardWizard"
+            icon="platform:/plugin/org.openhwgroup.corev.ide/images/ohw16.png"
+            id="org.openhwgroup.corev.ide.definition.ui.board.wizard"
+            name="%wizard.board.title"
+            project="false">
+      </wizard>
+      <wizard
+            category="org.openhwgroup.corev.ide.definition.category"
+            class="org.openhwgroup.corev.ide.definition.ui.meta.DefineToolchainWizard"
+            icon="platform:/plugin/org.openhwgroup.corev.ide/images/ohw16.png"
+            id="org.openhwgroup.corev.ide.definition.ui.toolchain"
+            name="%wizard.toolchain.title">
+      </wizard>
+   </extension>
+   
+</plugin>

@@ -12,7 +12,11 @@
  *******************************************************************************/
 package org.openhwgroup.corev.ide.ui.workbench.meta;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Platform;
+import org.openhwgroup.corev.ide.definition.json.JsonConfiguration;
 import org.openhwgroup.corev.ide.ui.workbench.Messages;
 
 public final class Boards extends PropertyNode {
@@ -24,6 +28,17 @@ public final class Boards extends PropertyNode {
 	@Override
 	public String title() {
 		return Messages.Boards_title;
+	}
+
+	@Override
+	public Object[] getChildren() {
+		try {
+			IFile file = project().getFile("corev.mf"); //$NON-NLS-1$
+			return new JsonConfiguration().apply(file.getContents()).boards().toArray();
+		} catch (CoreException e) {
+			Platform.getLog(getClass()).log(e.getStatus());
+			return new Object[0];
+		}
 	}
 
 }

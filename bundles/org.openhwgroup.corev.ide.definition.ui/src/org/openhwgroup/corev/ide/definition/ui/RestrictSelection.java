@@ -10,27 +10,27 @@
  * Contributors:
  *     Nikifor Fedorov (ArSysOp) - initial API and implementation
  *******************************************************************************/
-package org.openhwgroup.corev.ide.ui.workbench.meta;
+package org.openhwgroup.corev.ide.definition.ui;
 
-import java.util.Collections;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.widgets.List;
 
-import org.eclipse.core.resources.IProject;
-import org.openhwgroup.corev.ide.ui.workbench.Messages;
+public class RestrictSelection implements SelectionListener {
 
-public final class Debuggers extends PropertyNode {
-
-	public Debuggers(IProject project) {
-		super(project);
+	@Override
+	public void widgetSelected(SelectionEvent e) {
+		deselect(e);
 	}
 
 	@Override
-	public String title() {
-		return Messages.Debuggers_title;
+	public void widgetDefaultSelected(SelectionEvent e) {
+		deselect(e);
 	}
 
-	@Override
-	public Object[] getChildren() {
-		return Collections.emptyList().toArray();
+	private void deselect(SelectionEvent e) {
+		List list = (List) e.widget;
+		list.deselectAll();
 	}
 
 }
