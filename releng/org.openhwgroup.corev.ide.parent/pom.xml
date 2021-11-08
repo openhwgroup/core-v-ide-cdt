@@ -23,7 +23,6 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<build.label>${unqualifiedVersion}.${buildQualifier}</build.label>
 		<cbi-plugins.version>1.1.8-SNAPSHOT</cbi-plugins.version>
 		<jarsigner.version>1.1.5</jarsigner.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,7 +36,10 @@
 		<cbi-jdt-repo.url>https://repo.eclipse.org/content/repositories/eclipse-staging/</cbi-jdt-repo.url>
 		<eclipse-repo.url>https://repo.eclipse.org/content/repositories/cbi/</eclipse-repo.url>
 		<cbi-snapshots-repo.url>https://repo.eclipse.org/content/repositories/cbi-snapshots/</cbi-snapshots-repo.url>
-
+		<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+		<buildTimestamp>${maven.build.timestamp}</buildTimestamp>
+	    <buildId>${buildTimestamp}</buildId>
+		<build.label>${unqualifiedVersion}.${buildQualifier}</build.label>
 	</properties>
 
 	<pluginRepositories>
@@ -239,7 +241,36 @@
 				<version>${tycho.version}</version>
 				<extensions>true</extensions>
 			</plugin>
-			
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>process-about.mappings</id>
+						<phase>prepare-package</phase>
+						<configuration>
+							<outputDirectory>${project.build.directory}</outputDirectory>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>${basedir}</directory>
+									<includes>
+										<include>about.mappings</include>
+										<include>OSGI-INF/l10n/bundle*</include>
+									</includes>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -358,11 +389,11 @@
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
 					</archive>
-					<additionalFileSets combine.children="append">
+					<additionalFileSets>
 						<fileSet>
 							<directory>${project.build.directory}</directory>
 							<includes>
-								<include>.api_description</include>
+								<include>about.mappings</include>
 							</includes>
 						</fileSet>
 					</additionalFileSets>
