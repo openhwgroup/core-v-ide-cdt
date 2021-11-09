@@ -53,6 +53,7 @@
       <feature id="org.eclipse.embedcdt.templates.cortexm"/>
       <feature id="org.eclipse.embedcdt.templates.sifive"/>
       <feature id="org.eclipse.embedcdt.packs"/>
+      <feature id="org.eclipse.passage.lic.execute.feature"/>
       <feature id="org.openhwgroup.corev.ide.cdt.feature"/>
       <feature id="org.openhwgroup.corev.ide.feature"/>
       <feature id="org.openhwgroup.corev.ide.toolchains.gnu.feature"/>
