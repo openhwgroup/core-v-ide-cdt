@@ -40,6 +40,7 @@
 		<module>..\..\bundles\org.openhwgroup.corev.ide.ui.workbench</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.definition</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.definition.ui</module>
+		<module>..\..\bundles\org.openhwgroup.corev.ide.p2.ui</module>
 		<module>..\..\bundles\org.openhwgroup.corev.ide.seal</module>
 		<module>..\..\features\org.openhwgroup.corev.ide.feature</module>
 
