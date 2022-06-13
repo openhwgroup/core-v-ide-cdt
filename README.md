@@ -1,3 +1,7 @@
+# :no_entry: DEPRECATED - no longer actively maintained
+
+This project was updated and merged into the [CORE-V-SDK](https://github.com/openhwgroup/core-v-sdk) repository.
+
 <img src="https://www.openhwgroup.org/images/openhw-landscape.svg" width="418px" height="103px" /> <img src="https://www.openhwgroup.org/images/core-v-portrait.png" align="right" width="150px" height="120px"/>
 
 ## OpenHW Group CORE-V IDE based on Eclipse CDT
