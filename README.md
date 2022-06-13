@@ -1,4 +1,6 @@
-# DEPRECATED - no longer actively maintained
+# :no_entry: DEPRECATED - no longer actively maintained
+
+
 
 This project was updated and merged into the [CORE-V-SDK](https://github.com/openhwgroup/core-v-sdk) repo.
 
